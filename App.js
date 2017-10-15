@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
-import { Text, View, StyleSheet, TextInput, Button } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import React, { Component } from 'react'
+import { Text, View, StyleSheet, TextInput, Button } from 'react-native'
+import LinearGradient from 'react-native-linear-gradient'
+
+import Login from './components/login'
 
 export default class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       username: 'Username',
       password: 'Password'
@@ -29,11 +31,15 @@ export default class App extends Component {
           onChangeText={(password) => this.setState({password})}
           placeholder={this.state.password} placeholderTextColor='rgba(255, 255, 255, 0.7)' />
 
-          <Button style={styles.LoginButton} title="Login" color="#841584" accessibilityLabel="Learn more about this purple button"/>
-          <Button style={styles.LoginButton} title="Sign Up" color="#841584" accessibilityLabel="Learn more about this purple button"/>
+          <View style={styles.loginButton}>
+            <Text style={{textAlign: 'center', backgroundColor: 'transparent', fontSize: 18, color: '#F0318B'}}>Login</Text>
+          </View>
+          <View style={styles.signUpButton}>
+            <Text style={{textAlign: 'center', backgroundColor: 'transparent', fontSize: 18, color: 'white'}}>Sign Up</Text>
+          </View>
         </View>
     </LinearGradient>
-    );
+    )
   }
 }
 
@@ -61,6 +67,23 @@ var styles = StyleSheet.create({
   },
   loginButton: {
     marginTop: 30,
-    borderRadius: 50
-  }
-});
+    borderRadius: 50,
+    height:28,
+    width: '80%',
+    textAlign: 'center',
+    backgroundColor:'white',
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: '#fff'
+  },
+  signUpButton: {
+    marginTop: 15,
+    borderRadius: 50,
+    height:28,
+    width: '80%',
+    textAlign: 'center',
+    borderRadius:10,
+    borderWidth: 2,
+    borderColor: '#fff'
+  },
+})
